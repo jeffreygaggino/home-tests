@@ -1,0 +1,306 @@
+
+@font-face {
+    font-family: "Circular";
+    src: url("https://cdn.shopify.com/s/files/1/0115/0985/8404/files/CircularXXWeb-Regular.woff?v=1602473442")
+        format("woff");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Circular";
+    src: url("https://cdn.shopify.com/s/files/1/0115/0985/8404/files/CircularXXWeb-Medium.woff?v=1602473442")
+        format("woff");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Pulp";
+    src: url("https://cdn.shopify.com/s/files/1/0115/0985/8404/files/PulpDisplay-Medium.woff?v=1602473441")
+        format("woff");
+    font-weight: 500;
+}
+
+//  defaults for primary btns
+@mixin hs-btn-default {
+    width: max-content;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    line-height: 14px;
+    box-sizing: border-box;
+    font-weight: 500;
+    border-radius: 0;
+    padding: 0 50px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border 0.2s ease-in-out;
+  
+    &.hs-btn-lg {
+      padding: 0 30px;
+    }
+  
+    &.full-width,
+    &.w-100 {
+      width: 100%;
+      padding: 0;
+    }
+  }
+  
+  a:not([href]):not([tabindex]) {
+    &.hs-btn-primary {
+      color: #ffffff;
+    }
+  
+    &.hs-btn-primary-alt {
+      color: #000000;
+    }
+  
+    &.hs-btn-secondary {
+      color: #000000;
+    }
+  
+    &.hs-btn-checkout {
+      color: #ffffff;
+    }
+  
+    &.hs-btn-upsell {
+      color: #000000;
+    }
+  }
+  
+  .hs-btn-primary {
+    @include hs-btn-default;
+    background-color: #000000;
+    color: #ffffff;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    &.btn-pill {
+      border-radius: 50px;
+    }
+    &:disabled {
+      background: #E5E5E5;
+      pointer-events: none;
+    }
+    &.disable {
+      background: #E5E5E5 !important;
+      pointer-events: none;
+      opacity: 1;
+    }
+  
+    &:hover {
+      color: #ffffff;
+      background-color: #333333;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+  
+    &:active,
+    &:focus {
+      color: #ffffff;
+      background-color: #454545;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  .hs-btn-primary-alt {
+    @include hs-btn-default;
+    background-color: #ffffff;
+    color: #000000;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  
+    &:hover {
+      color: #000000;
+      background-color: #fafafa;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+  
+    &:active,
+    &:focus {
+      color: #000000;
+      background-color: #f5f5f5;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  .hs-btn-secondary {
+    @include hs-btn-default;
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  
+    &:hover {
+      color: #000000;
+      border: 1px solid #000000;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+  
+    &:active,
+    &:focus {
+      color: #000000;
+      background-color: #f5f5f5;
+      border: 1px solid #666666;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  .hs-btn-checkout {
+    @include hs-btn-default;
+    background-color: #4A90E2;
+    color: #ffffff;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 0;
+  
+    &:hover {
+      color: #ffffff;
+      background-color: #65A1E6;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+  
+    &:active,
+    &:focus {
+      color: #ffffff;
+      background-color: #4382CB;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  .hs-btn-catalogue {
+    @include hs-btn-default;
+    font-size: 12px;
+    line-height: 12px;
+    height: 42px;
+    background-color: #ffffff;
+    color: #000000;
+    width: 100%;
+    padding: 0;
+    border: 1px solid #e5e5e5;
+    font-weight: normal;
+  
+    &:hover {
+      color: #000000;
+      background-color: #ffffff;
+      border: 1px solid #000000;
+    }
+  
+    &:active,
+    &:focus {
+      color: #000000;
+      background-color: #f5f5f5;
+      border: 1px solid #666666;
+    }
+  }
+  
+  .hs-btn-upsell {
+    @include hs-btn-default;
+    font-size: 12px;
+    line-height: 12px;
+    height: 42px;
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #e5e5e5;
+  
+    &:hover {
+      color: #000000;
+      background-color: #ffffff;
+      border: 1px solid #000000;
+    }
+  
+    &:active,
+    &:focus {
+      color: #000000;
+      background-color: #f5f5f5;
+      border: 1px solid #666666;
+    }
+  }
+  
+  .bs-disabled {
+    background: #F5F5F5 !important;
+    border: 2px solid #F5F5F5 !important;
+    color: #666666 !important;
+    pointer-events: none;
+  }
+  
+  .no-box-shadow{
+    box-shadow: none;
+  }
+  
+  .hs-products-btn{
+    @include hs-btn-default;
+    font-size: 16px;
+    line-height: 24px;
+    color: #ffffff;
+    text-align: center;
+    font-weight: 500;
+    background: #4A90E2;
+    border-radius: 50px;
+    border: none;
+    padding: 15px 0;
+    width: 100%;
+    margin: auto;
+    &:active {
+      border: none;
+    }
+    &:hover {
+      color: #ffffff;
+      background-color: #65A1E6;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    }
+  
+    &:active,
+    &:focus {
+      color: #ffffff;
+      background-color: #65A1E6;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    }
+  }
+  .hs-products-btn-alt{
+    @include hs-btn-default;
+    font-size: 16px;
+    line-height: 24px;
+    color: #222222;
+    text-align: center;
+    font-weight: 500;
+    background: #ffffff;
+    border-radius: 50px;
+    border: 1px solid #eeeeee;
+    width: 100%;
+    padding: 14px 0;
+    &:hover {
+      color: #000000;
+      background-color: #ffffff;
+      border: 1px solid #000000;
+    }
+  
+    &:active,
+    &:focus {
+      color: #000000;
+      background-color: #f5f5f5;
+      border: 1px solid #666666;
+    }
+    .currency_iso {
+      font-size: 12px;
+    }
+  }
+  .currency_iso {
+    font-size: 12px;
+  }
+body {
+    font-family: Circular, Helvetica, Arial, sans-serif;
+    h1,
+    h2,
+    h3 {
+        font-family: "Pulp", Helvetica, Arial, sans-serif;
+    }
+
+  
+  
+}
+
+.scrollbar-track > .scrollbar-thumb {
+    background-color: #EC008C;
+}

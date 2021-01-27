@@ -1,0 +1,79 @@
+@mixin tablet {
+    @media(min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: 991px) {
+        @content;
+    }
+}
+
+@mixin largedesktop {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin smallscreen {
+    @media (max-width: 370px) {
+        @content;
+    }
+}
+
+@mixin onlymobile {
+    @media (max-width: 767px) {
+        @content;
+    }
+}
+html {
+    scroll-behavior: smooth;
+  }
+body {
+    background-color: #fafafa;
+}
+::-webkit-scrollbar {
+    display: none; // Safari and Chrome
+}
+#body-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+}
+.cover-video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    video {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.div-filler {
+    object-fit: cover;
+    overflow: hidden;
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+#home {
+    #home-hero {
+        position: relative;
+        height: 600px;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+    }
+    
+    .home-hero__content {
+
+    }
+
+}
