@@ -19,7 +19,7 @@ var r=function(t,e){return(r=Object.setPrototypeOf||{__proto__:[]}instanceof Arr
 var Scrollbar = window.Scrollbar;
 Scrollbar.use(OverscrollPlugin)
 Scrollbar.init(document.querySelector('#body-container'), {
-    damping: 0.05,
+    damping: 0.3,
     renderByPixels: !('ontouchstart' in document),
    
 });
