@@ -21,9 +21,8 @@ body {
 }
 
 #body-container {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+  width: 100%;
+  overflow: auto;
   position: fixed;
   top: 0;
   right: 0;
