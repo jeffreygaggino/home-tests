@@ -9,6 +9,7 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="defaults.css">
     <link rel="stylesheet" href="style.css">
+    <script src="lax.js"></script>
 </head>
 
 <body>
@@ -25,9 +26,10 @@
                 </div>
                 <cover-video :screen_width="screen_width" :video_src="{mobile: { poster: 'https://cdn.shopify.com/s/files/1/2502/5300/files/video_kit.png', src: 'https://cdn.shopify.com/s/files/1/2502/5300/files/Homepage_Brand_Video_Mobile_Compressed.mp4', }, desktop: { poster: 'https://cdn.shopify.com/s/files/1/2502/5300/files/Screen_Shot_2020-09-16_at_10.10_1.png', src: 'https://cdn.shopify.com/s/files/1/2502/5300/files/Homepage_Brand_Video_Desktop_Compressed.mp4', }}"></cover-video>
                 <i class="waves" >
-                    <svg preserveAspectRatio="xMaxYMin slice" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1440 270" style="enable-background:new 0 0 1440 270;" xml:space="preserve"><path vector-effect="non-scaling-stroke" class="hero-wave" d="M860.8,73.7C1110.2-1,1303.3-18.9,1440,19.9v249.5H0V89.3C324.5,153.6,611.4,148.4,860.8,73.7z"></path></svg>
+                    <svg preserveAspectRatio="xMaxYMin slice" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1440 270" style="enable-background:new 0 0 1440 270;" xml:space="preserve"><path fill="#ffffff" vector-effect="non-scaling-stroke" class="hero-wave" d="M860.8,73.7C1110.2-1,1303.3-18.9,1440,19.9v249.5H0V89.3C324.5,153.6,611.4,148.4,860.8,73.7z"></path></svg>
                   </i>
             </section>
+            <section class='container' style='height: 200px; background-color: #ffffff;'></section>
             <div class="div-filler container p-0">
                 <img src="https://source.unsplash.com/random?sig=1" alt="">
             </div>
@@ -65,6 +67,27 @@
         crossorigin="anonymous"></script>
         <script>
 
+
+window.onload = function () {
+      lax.init()
+
+      lax.addDriver('scrollY', function () {
+        return window.scrollY
+      }, { inertiaEnabled: true })
+
+      lax.addElements(".waves", {
+        scrollY: {
+          scaleY: [
+            [0, 500],
+            [1, 0],
+            {
+                inertia: .1
+            }
+          ],
+        },
+      })
+    }
+  
 
 
         </script>

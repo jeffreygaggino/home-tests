@@ -46,6 +46,20 @@ body {
   height: 100%;
 }
 
+.waves {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.waves svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: absolute;
+  bottom: -4px;
+}
+
 #home #home-hero {
   position: relative;
   height: 600px;
