@@ -13,10 +13,10 @@
 
 <body>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <div id="body-container">
+    <div id="body-container" data-scroll-container>
 
-        <div id="home">
-            <section id="home-hero" class="container">
+        <div id="home" >
+            <section id="home-hero" class="container" data-scroll-section>
     
                 <div class="home-hero__content">
                     <h1 class="home-hero__content__title">PAP Plus</h1>
@@ -28,22 +28,22 @@
                     <svg preserveAspectRatio="xMaxYMin slice" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1440 270" style="enable-background:new 0 0 1440 270;" xml:space="preserve"><path vector-effect="non-scaling-stroke" class="hero-wave" d="M860.8,73.7C1110.2-1,1303.3-18.9,1440,19.9v249.5H0V89.3C324.5,153.6,611.4,148.4,860.8,73.7z"></path></svg>
                   </i>
             </section>
-            <div class="div-filler container p-0">
+            <div class="div-filler container p-0" data-scroll-section>
                 <img src="https://source.unsplash.com/random?sig=1" alt="">
             </div>
-            <div class="div-filler container p-0">
+            <div class="div-filler container p-0" data-scroll-section>
                 <img src="https://source.unsplash.com/random" alt="">
             </div>
-            <div class="div-filler container p-0">
+            <div class="div-filler container p-0" data-scroll-section>
                 <img src="https://source.unsplash.com/random?sig=2" alt="">
             </div>
-            <div class="div-filler container p-0">
+            <div class="div-filler container p-0" data-scroll-section>
                 <img src="https://source.unsplash.com/random?sig=3" alt="">
             </div>
-            <div class="div-filler container p-0">
+            <div class="div-filler container p-0" data-scroll-section>
                 <img src="https://source.unsplash.com/random?sig=4" alt="">
             </div>
-            <div class="div-filler container p-0">
+            <div class="div-filler container p-0" data-scroll-section>
                 <img src="https://source.unsplash.com/random?sig=5" alt="">
             </div>
         </div>
@@ -51,9 +51,14 @@
 
 
 
+    <script src="locomotive.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.min.js"></script>
     <script src="index.js"></script>
-    <script src="scroll.js"></script>
-    <script src="overscroll.js"></script>
+    <!-- <script src="scroll.js"></script>
+    <script src="overscroll.js"></script> -->
+    <script>
+
+    </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
