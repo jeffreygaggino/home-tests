@@ -1,5 +1,4 @@
 html, body {
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -18,17 +17,6 @@ body {
 
 ::-webkit-scrollbar {
   display: none;
-}
-
-#body-container {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
 }
 
 .cover-video {
