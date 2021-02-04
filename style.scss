@@ -27,6 +27,11 @@
         @content;
     }
 }
+$header-transition: 1s ease-in-out;
+$header-transition-delay: 0.25s;
+$normal-color: #333;
+$transparent-color: #fff;
+
 html,body {
     // position: fixed;
     top: 0;
@@ -42,9 +47,78 @@ html {
 body {
     background-color: #fafafa;
 }
-::-webkit-scrollbar {
-    display: none; // Safari and Chrome
+#body-container {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
+header {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 1;
+}
+#header-container {
+    background-color: #fff;
+    transition: background-color $header-transition;
+    width: 100%;
+    height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    margin: 0 auto;
+
+    .icon-burger svg path {
+        stroke: $normal-color;
+        transition: stroke $header-transition;
+    }
+    .logo-hismile svg path {
+        fill: $normal-color;
+        transition: fill $header-transition;
+    }
+    .shopping-cart svg path {
+        stroke: $normal-color;
+        transition: stroke $header-transition;
+    }
+
+    
+    &.transparent_nav {
+        background-color: transparent;
+        .icon-burger svg path {
+            stroke: $transparent-color;
+        }
+        .logo-hismile svg path {
+            fill: $transparent-color;
+            transition: fill $header-transition;
+        }
+        .shopping-cart svg path {
+            stroke: $transparent-color;
+            transition: stroke $header-transition;
+        }
+    }
+}
+#header-container {
+    
+    .cart-text {
+        display: block;
+        color: #fff;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .mobile-nav {
+        width: 100%;
+        height: 72px;
+        
+
+    }
+}
+// ::-webkit-scrollbar {
+//     display: none; // Safari and Chrome
+// }
 #body-container {
     // width: 100vw;
     // height: 100vh;
@@ -61,6 +135,7 @@ body {
     height: 100%;
     z-index: -1;
     overflow: hidden;
+    filter: brightness(50%);
     video {
         display: block;
         width: 100%;
@@ -81,6 +156,8 @@ body {
     position: absolute;
     bottom: 0;
     width: 100%;
+    transition-delay: 0.1s;
+    transition: 0.25s all ease-out;
     svg {
         width: 100%;
         height: auto;
@@ -89,17 +166,42 @@ body {
         bottom: -4px;
     }
 }
+
+.container {
+    max-width: 1440px;
+}
 #home {
     #home-hero {
         position: relative;
-        height: 600px;
+        height: 900px;
         display: flex;
         justify-content: center;
         overflow: hidden;
+       
     }
     
     .home-hero__content {
 
     }
 
+}
+
+.rotated-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .kit_accent, .kit_image {
+        position: absolute;
+        height: 300px;
+        width: 300px;
+        transition-delay: 0.1s;
+        transition: 0.25s all ease-out;
+    }
 }

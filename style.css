@@ -15,8 +15,89 @@ body {
   background-color: #fafafa;
 }
 
-::-webkit-scrollbar {
-  display: none;
+#body-container {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 1;
+}
+
+#header-container {
+  background-color: #fff;
+  -webkit-transition: background-color 1s ease-in-out;
+  transition: background-color 1s ease-in-out;
+  width: 100%;
+  height: 72px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 24px;
+  margin: 0 auto;
+}
+
+#header-container .icon-burger svg path {
+  stroke: #333;
+  -webkit-transition: stroke 1s ease-in-out;
+  transition: stroke 1s ease-in-out;
+}
+
+#header-container .logo-hismile svg path {
+  fill: #333;
+  -webkit-transition: fill 1s ease-in-out;
+  transition: fill 1s ease-in-out;
+}
+
+#header-container .shopping-cart svg path {
+  stroke: #333;
+  -webkit-transition: stroke 1s ease-in-out;
+  transition: stroke 1s ease-in-out;
+}
+
+#header-container.transparent_nav {
+  background-color: transparent;
+}
+
+#header-container.transparent_nav .icon-burger svg path {
+  stroke: #fff;
+}
+
+#header-container.transparent_nav .logo-hismile svg path {
+  fill: #fff;
+  -webkit-transition: fill 1s ease-in-out;
+  transition: fill 1s ease-in-out;
+}
+
+#header-container.transparent_nav .shopping-cart svg path {
+  stroke: #fff;
+  -webkit-transition: stroke 1s ease-in-out;
+  transition: stroke 1s ease-in-out;
+}
+
+#header-container .cart-text {
+  display: block;
+  color: #fff;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+#header-container .mobile-nav {
+  width: 100%;
+  height: 72px;
 }
 
 .cover-video {
@@ -25,6 +106,8 @@ body {
   height: 100%;
   z-index: -1;
   overflow: hidden;
+  -webkit-filter: brightness(50%);
+          filter: brightness(50%);
 }
 
 .cover-video video {
@@ -50,6 +133,10 @@ body {
   position: absolute;
   bottom: 0;
   width: 100%;
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+  -webkit-transition: 0.25s all ease-out;
+  transition: 0.25s all ease-out;
 }
 
 .waves svg {
@@ -60,9 +147,13 @@ body {
   bottom: -4px;
 }
 
+.container {
+  max-width: 1440px;
+}
+
 #home #home-hero {
   position: relative;
-  height: 600px;
+  height: 900px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -70,5 +161,35 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   overflow: hidden;
+}
+
+.rotated-container {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.rotated-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.rotated-container .kit_accent, .rotated-container .kit_image {
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+  -webkit-transition: 0.25s all ease-out;
+  transition: 0.25s all ease-out;
 }
 /*# sourceMappingURL=style.css.map */

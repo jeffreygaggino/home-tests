@@ -15,7 +15,9 @@
 <body>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <div id="body-container">
-
+        <header>
+            <header-nav :screen_width="screen_width"></header-nav>
+        </header>
         <div id="home">
             <section id="home-hero" class="container">
     
@@ -26,10 +28,23 @@
                 </div>
                 <cover-video :screen_width="screen_width" :video_src="{mobile: { poster: 'https://cdn.shopify.com/s/files/1/2502/5300/files/video_kit.png', src: 'https://cdn.shopify.com/s/files/1/2502/5300/files/Homepage_Brand_Video_Mobile_Compressed.mp4', }, desktop: { poster: 'https://cdn.shopify.com/s/files/1/2502/5300/files/Screen_Shot_2020-09-16_at_10.10_1.png', src: 'https://cdn.shopify.com/s/files/1/2502/5300/files/Homepage_Brand_Video_Desktop_Compressed.mp4', }}"></cover-video>
                 <i class="waves" >
-                    <svg preserveAspectRatio="xMaxYMin slice" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1440 270" style="enable-background:new 0 0 1440 270;" xml:space="preserve"><path fill="#ffffff" vector-effect="non-scaling-stroke" class="hero-wave" d="M860.8,73.7C1110.2-1,1303.3-18.9,1440,19.9v249.5H0V89.3C324.5,153.6,611.4,148.4,860.8,73.7z"></path></svg>
+                    <svg width="1440" height="93" viewBox="0 0 1440 93" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.76837e-05 7.21739L60.0001 15.913C120 24.6087 240 42 360 42C480 42 600 24.6087 720 13.7391C840 2.86956 960 -1.47826 1080 0.695648C1200 2.86956 1320 11.5652 1380 15.913L1440 20.2609V92.5H1380C1320 92.5 1200 92.5 1080 92.5C960 92.5 840 92.5 720 92.5C600 92.5 480 92.5 360 92.5C240 92.5 120 92.5 60 92.5H0L4.76837e-05 7.21739Z" fill="white"/>
+                        </svg>
+                        
                   </i>
             </section>
-            <section class='container' style='height: 200px; background-color: #ffffff;'></section>
+            <!-- <section class='container' style='height: 50px; background-color: #ffffff;'></section> -->
+            <section class="container" style='height: 400px; background-color: #ffffff;'>
+                <div class="rotated-container">
+                    <div class="kit_accent">
+                        <img src="https://cdn.shopify.com/s/files/1/0115/0985/8404/files/transform_rotate_image_outside.png?v=1612143134" alt="">
+                    </div>
+                    <div class="kit_image">
+                        <img src="https://cdn.shopify.com/s/files/1/0115/0985/8404/files/transform_rotate_image_center.png?v=1612143134" alt="">
+                    </div>
+                </div>
+            </section>
             <div class="div-filler container p-0">
                 <img src="https://source.unsplash.com/random?sig=1" alt="">
             </div>
@@ -68,26 +83,7 @@
         <script>
 
 
-window.onload = function () {
-      lax.init()
 
-      lax.addDriver('scrollY', function () {
-        return window.scrollY
-      }, { inertiaEnabled: true })
-
-      lax.addElements(".waves", {
-        scrollY: {
-          scaleY: [
-            ['0', 'elOutY-100'],
-            [1, 0],
-            {
-                inertia: .1
-            }
-          ],
-        },
-      })
-    }
-  
 
 
         </script>
