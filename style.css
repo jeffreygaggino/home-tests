@@ -1,10 +1,12 @@
-html, body {
+html,
+body {
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
+  position: absolute;
 }
 
 html {
@@ -12,7 +14,7 @@ html {
 }
 
 body {
-  background-color: #fafafa;
+  background-color: #fff;
 }
 
 #body-container {
@@ -25,14 +27,86 @@ body {
 header {
   position: fixed;
   top: 0;
-  width: 100vw;
+  width: 100%;
+  max-width: 100vw;
   z-index: 1;
 }
 
-#header-container {
+#header-outside-container {
   background-color: #fff;
-  -webkit-transition: background-color 1s ease-in-out;
-  transition: background-color 1s ease-in-out;
+  -webkit-transition: background-color 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
+  margin: 0 auto;
+  -webkit-filter: drop-shadow(0 0 10px rgba(100, 100, 100, 0.3));
+          filter: drop-shadow(0 0 10px rgba(100, 100, 100, 0.3));
+}
+
+#header-outside-container .icon-burger svg path {
+  stroke: #333;
+  -webkit-transition: stroke 0.5s ease-in-out;
+  transition: stroke 0.5s ease-in-out;
+}
+
+#header-outside-container .logo-hismile svg path {
+  fill: #333;
+  -webkit-transition: fill 0.5s ease-in-out;
+  transition: fill 0.5s ease-in-out;
+}
+
+#header-outside-container .shopping-cart svg path {
+  stroke: #333;
+  -webkit-transition: stroke 0.5s ease-in-out;
+  transition: stroke 0.5s ease-in-out;
+}
+
+#header-outside-container .cart-text {
+  display: block;
+  color: #333;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  -webkit-transition: color 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out;
+}
+
+#header-outside-container .header-link {
+  color: #333;
+  -webkit-transition: color 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 14px;
+  display: block;
+  padding: 0 20px;
+}
+
+#header-outside-container.transparent_nav {
+  background-color: transparent;
+}
+
+#header-outside-container.transparent_nav .icon-burger svg path {
+  stroke: #fff;
+}
+
+#header-outside-container.transparent_nav .logo-hismile svg path {
+  fill: #fff;
+}
+
+#header-outside-container.transparent_nav .shopping-cart svg path {
+  stroke: #fff;
+}
+
+#header-outside-container.transparent_nav .cart-text {
+  color: #fff;
+}
+
+#header-outside-container.transparent_nav .header-link {
+  color: #fff;
+}
+
+#header-container {
+  max-width: 1440px;
   width: 100%;
   height: 72px;
   display: -webkit-box;
@@ -48,56 +122,14 @@ header {
   margin: 0 auto;
 }
 
-#header-container .icon-burger svg path {
-  stroke: #333;
-  -webkit-transition: stroke 1s ease-in-out;
-  transition: stroke 1s ease-in-out;
-}
-
-#header-container .logo-hismile svg path {
-  fill: #333;
-  -webkit-transition: fill 1s ease-in-out;
-  transition: fill 1s ease-in-out;
-}
-
-#header-container .shopping-cart svg path {
-  stroke: #333;
-  -webkit-transition: stroke 1s ease-in-out;
-  transition: stroke 1s ease-in-out;
-}
-
-#header-container.transparent_nav {
-  background-color: transparent;
-}
-
-#header-container.transparent_nav .icon-burger svg path {
-  stroke: #fff;
-}
-
-#header-container.transparent_nav .logo-hismile svg path {
-  fill: #fff;
-  -webkit-transition: fill 1s ease-in-out;
-  transition: fill 1s ease-in-out;
-}
-
-#header-container.transparent_nav .shopping-cart svg path {
-  stroke: #fff;
-  -webkit-transition: stroke 1s ease-in-out;
-  transition: stroke 1s ease-in-out;
-}
-
-#header-container .cart-text {
-  display: block;
-  color: #fff;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
-}
-
-#header-container .mobile-nav {
-  width: 100%;
-  height: 72px;
+#header-container .header-left {
+  width: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(10px, auto))[3];
+      grid-template-columns: repeat(3, minmax(10px, auto));
+  grid-gap: 40px;
+  place-items: center normal;
 }
 
 .cover-video {
@@ -132,11 +164,13 @@ header {
 .waves {
   position: absolute;
   bottom: 0;
-  width: 100%;
-  -webkit-transition-delay: 0.1s;
-          transition-delay: 0.1s;
-  -webkit-transition: 0.25s all ease-out;
-  transition: 0.25s all ease-out;
+  left: -5px;
+  width: 105%;
+  -webkit-transition: 0.5s all ease-out;
+  transition: 0.5s all ease-out;
+  -webkit-transition-delay: 0.25s;
+          transition-delay: 0.25s;
+  margin: 0 auto;
 }
 
 .waves svg {
@@ -161,6 +195,22 @@ header {
       -ms-flex-pack: center;
           justify-content: center;
   overflow: hidden;
+  color: #fff;
+}
+
+#home .home-hero__content {
+  width: 100%;
+  max-width: 320px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .rotated-container {
@@ -183,7 +233,8 @@ header {
   display: block;
 }
 
-.rotated-container .kit_accent, .rotated-container .kit_image {
+.rotated-container .kit_accent,
+.rotated-container .kit_image {
   position: absolute;
   height: 300px;
   width: 300px;

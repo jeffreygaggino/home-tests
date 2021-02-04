@@ -1,5 +1,5 @@
 @mixin tablet {
-    @media(min-width: 768px) {
+    @media (min-width: 768px) {
         @content;
     }
 }
@@ -27,12 +27,13 @@
         @content;
     }
 }
-$header-transition: 1s ease-in-out;
+$header-transition: 0.5s ease-in-out;
 $header-transition-delay: 0.25s;
 $normal-color: #333;
 $transparent-color: #fff;
 
-html,body {
+html,
+body {
     // position: fixed;
     top: 0;
     left: 0;
@@ -40,12 +41,13 @@ html,body {
     height: 100%;
     margin: 0;
     padding: 0;
+    position: absolute;
 }
 html {
     scroll-behavior: smooth;
-  }
+}
 body {
-    background-color: #fafafa;
+    background-color: #fff;
 }
 #body-container {
     width: 100%;
@@ -56,19 +58,15 @@ body {
 header {
     position: fixed;
     top: 0;
-    width: 100vw;
+    width: 100%;
+    max-width: 100vw;
     z-index: 1;
 }
-#header-container {
+#header-outside-container {
     background-color: #fff;
     transition: background-color $header-transition;
-    width: 100%;
-    height: 72px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 24px;
     margin: 0 auto;
+    filter: drop-shadow(0 0 10px rgba(100, 100, 100, 0.3));
 
     .icon-burger svg path {
         stroke: $normal-color;
@@ -82,8 +80,25 @@ header {
         stroke: $normal-color;
         transition: stroke $header-transition;
     }
+    .cart-text {
+        display: block;
+        color: $normal-color;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        transition: color $header-transition;
+    }
+    .header-link {
+        color: $normal-color;
+        transition: color $header-transition;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 14px;
+        display: block;
+        padding: 0 20px;
+    }
 
-    
     &.transparent_nav {
         background-color: transparent;
         .icon-burger svg path {
@@ -91,44 +106,37 @@ header {
         }
         .logo-hismile svg path {
             fill: $transparent-color;
-            transition: fill $header-transition;
         }
         .shopping-cart svg path {
             stroke: $transparent-color;
-            transition: stroke $header-transition;
+        }
+        .cart-text {
+            color: $transparent-color;
+        }
+        .header-link {
+            color: $transparent-color;
         }
     }
 }
 #header-container {
-    
-    .cart-text {
-        display: block;
-        color: #fff;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 20px;
-    }
-    .mobile-nav {
-        width: 100%;
-        height: 72px;
-        
+    max-width: 1440px;
+    width: 100%;
+    height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    margin: 0 auto;
 
+    .header-left {
+        width: auto;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(10px, auto));
+        grid-gap: 40px;
+        place-items: center normal;
     }
 }
-// ::-webkit-scrollbar {
-//     display: none; // Safari and Chrome
-// }
-#body-container {
-    // width: 100vw;
-    // height: 100vh;
-    // overflow: hidden;
-    // position: fixed;
-    // top: 0;
-    // right: 0;
-    // bottom: 0;
-    // left: 0;
-}
+
 .cover-video {
     position: absolute;
     width: 100%;
@@ -155,9 +163,12 @@ header {
 .waves {
     position: absolute;
     bottom: 0;
-    width: 100%;
-    transition-delay: 0.1s;
-    transition: 0.25s all ease-out;
+    left: -5px;
+    width: 105%;
+    transition: 0.5s all ease-out;
+    transition-delay: 0.25s;
+    margin: 0 auto;
+    
     svg {
         width: 100%;
         height: auto;
@@ -177,13 +188,16 @@ header {
         display: flex;
         justify-content: center;
         overflow: hidden;
-       
+        color: #fff;
     }
-    
+
     .home-hero__content {
-
+        width: 100%;
+        max-width: 320px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
     }
-
 }
 
 .rotated-container {
@@ -197,7 +211,8 @@ header {
         height: auto;
         display: block;
     }
-    .kit_accent, .kit_image {
+    .kit_accent,
+    .kit_image {
         position: absolute;
         height: 300px;
         width: 300px;
